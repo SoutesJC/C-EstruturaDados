@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int perfeito (int *n){
+    int *temp = (int*)malloc(sizeof(int));
+    int *pont = (int*)malloc(sizeof(int));
+    *pont = 0;
+    for(*temp = 1; *temp < *n;(*temp) ++){
+        if(*n % *temp == 0){
+            *pont = *pont + *temp;
+        }
+    }
+    if(*pont == *n){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+void main (){
+    int *t;
+    t = malloc(sizeof(int));
+    scanf("%d",t);
+    if( perfeito(t)){
+        printf("O numero é perfeito.");
+    }else{
+        printf("O numero nao é perfeito.");
+    }
+}

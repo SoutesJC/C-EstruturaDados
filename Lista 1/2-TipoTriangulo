@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void main(){
+    int *f = (int*)malloc(sizeof(int));
+    int *g = (int*)malloc(sizeof(int));
+    int *h = (int*)malloc(sizeof(int));
+    int *cont = (int*)malloc(sizeof(int));
+
+    scanf("%d",f);
+    scanf("%d",g);
+    scanf("%d",h);
+
+    *cont = 0;
+
+    if( *f - *g == 0){
+        ++ *cont;
+    }
+    if( *g - *h == 0){
+        ++ *cont; 
+    }
+    if( *h - *f == 0){
+        ++ *cont; 
+    }
+    if( *cont == 0){
+        printf("É um Escaleno.");
+    } 
+    if( *cont == 1){
+        printf("É um Isóceles.");
+    }
+    if( *cont == 3){
+        printf("É um Equilátero.");
+    }
+}

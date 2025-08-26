@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int Maior(void *vetor) {
+    int *num = (int*)vetor;
+    int tam = *num;
+    int maior = *(num + 1);  
+
+    for (int i = 2; i <= tam; i++) {
+        if (*(num + i) > maior) {
+            maior = *(num + i);
+    }
+
+    return maior;
+  }
+}
+
+int main() {
+    int tamanho;
+
+    printf("Digite a quantidade de números: ");
+    scanf("%d", &tamanho);
+
+    int *vetor = malloc(tamanho * sizeof(int));
+
+    *vetor = tamanho;
+
+    printf("Digite %d numeros inteiros:\n", tamanho);
+    for (int i = 1; i <= tamanho; i++) {
+        scanf("%d", vetor + i);
+    }
+
+    int maior = Maior((int*)vetor);
+
+    printf("O maior numero é: %d\n", maior);
+
+}
