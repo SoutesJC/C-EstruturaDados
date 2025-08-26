@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+    
+    int *t = (int*)malloc(sizeof(int));
+    int *b = (int*)malloc(sizeof(int));
+    int *u = (int*)malloc(sizeof(int));
+    
+    printf("Digite dois numeros:");
+    scanf("%d", t);
+    scanf("%d", b);
+
+    *u = (*t + *b)/ 2;
+
+    printf("A média dos numeros é: %d ", *u);
+}
