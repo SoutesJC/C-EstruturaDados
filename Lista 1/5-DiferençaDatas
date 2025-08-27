@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Data {
+    int dia;
+    int mes;
+    int ano;
+};
+
+
+int diferencaDias(const struct Data *data1, const struct Data *data2) {
+    
+    int diff1 = data1->dia + 30 * data1->mes + 365 * data1->ano;
+    int diff2 = data2->dia + 30 * data2->mes + 365 * data2->ano;
+
+    return abs(diff2 - diff1); 
+}
+
+int main() {
+    struct Data data1, data2;
+
+    printf("Digite a primeira data (dia mes ano): ");
+    scanf("%d %d %d", &data1.dia, &data1.mes, &data1.ano);
+
+    printf("Digite a segunda data (dia mes ano): ");
+    scanf("%d %d %d", &data2.dia, &data2.mes, &data2.ano);
+
+    int diferenca = diferencaDias(&data1, &data2);
+
+    printf("A diferenca de dias entre as datas é: %d\n", diferenca);
+
+    return 0;
+}

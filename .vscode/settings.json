@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "4-mallocmaiornúm": "c"
+        "4-mallocmaiornúm": "c",
+        "stdlib.h": "c",
+        "6-distanciaxy": "c"
     }
 }
